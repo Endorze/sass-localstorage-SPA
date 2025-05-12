@@ -1,4 +1,5 @@
 @import "../../styles/mixins";
+@import "../../styles/variables.scss";
 
 .container {
     @include center-content;
@@ -8,12 +9,12 @@
     @include horizontal-content;
 }
 
-.container1 {
-    @include flex-40-percent;
+.container1 h1 {
+    @include gradient-text;
+    font-size: 45px
 }
 
 .container2 {
-    @include flex-60-percent;
     @include gap-16;
     display: flex;
     flex-direction: column;
@@ -25,23 +26,47 @@
     max-width: 500px;
 }
 
-.imageDiv img {
-    width: 150px;
-    height: auto;
-}
-
 .imageDiv {
     display: flex;
     width: 100%;
     justify-content: flex-start;
     gap: 8px;
+
+    img {
+        width: 150px;
+        height: auto;
+    }
+
+    p {
+        display: flex;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-.imageDiv p {
+.registerDiv button {
+    background: none;
+    border: 0;
+    color: $button-background-color;
+    font-size: 16px;
+    text-transform: capitalize;
+    cursor: pointer;
+    @include transition-03s-text;
+}
+
+.registerDiv button:hover {
+    color: $button-hover-color;
+}
+
+.registerDiv {
     display: flex;
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 700;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+}
+
+.registerDiv p {
+    color: rgb(189, 187, 187);
+    cursor: pointer;
 }
