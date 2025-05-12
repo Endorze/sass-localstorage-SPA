@@ -1,0 +1,47 @@
+@import "../../styles/mixins";
+
+.container {
+    @include center-content;
+}
+
+.formWrapper {
+    @include horizontal-content;
+}
+
+.container1 {
+    @include flex-40-percent;
+}
+
+.container2 {
+    @include flex-60-percent;
+    @include gap-16;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputButtonContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.imageDiv img {
+    width: 150px;
+    height: auto;
+}
+
+.imageDiv {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.imageDiv p {
+    display: flex;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+}

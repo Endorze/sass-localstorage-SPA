@@ -1,0 +1,37 @@
+@mixin center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 6rem 2rem;
+}
+
+@mixin horizontal-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    gap: 2rem;
+}
+
+@mixin flex-40-percent {
+    flex: 0.4;
+    background: red;
+}
+
+@mixin flex-60-percent {
+    justify-content: center;
+    flex: 0.6;
+}
+
+@mixin input {
+    padding: 0.3rem;
+}
+
+@mixin vertical-margin-element {
+    margin: 0.5rem 0;
+}
+
+@mixin gap-16 {
+    gap: 16px;
+}
