@@ -1,6 +1,10 @@
 import { useState } from "react";
 import type { FC } from "react";
 import type { Account } from "../../types/types";
+import Button from "../Button/Button";
+import styles from "./Form.module.scss"
+import Input from "../Input/Input";
+import peopleLogo from "/images/people.png"
 
 type Props = {
     onLogin: () => void;
@@ -35,30 +39,31 @@ const Form: FC<Props> = ({ onLogin }) => {
     }
 
     return (
-        <div>
-            <h2>{isRegistered ? 'Registrera konto' : 'Logga in'}</h2>
-            <input
-                type="text"
-                placeholder="Användarnamn"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-            /><br />
-            <input
-                type="password"
-                placeholder="Lösenord"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            /><br />
-            <button onClick={handleSubmit}>
-                {isRegistered ? 'Registrera' : 'Logga in'}
-            </button>
-            <p style={{ color: 'red' }}>{error}</p>
-            <p>
-                {isRegistered ? 'Har du redan ett konto?' : 'Inget konto?'}{' '}
-                <button onClick={() => setIsRegistered(!isRegistered)}>
-                    {isRegistered ? 'Logga in här' : 'Registrera dig'}
-                </button>
-            </p>
+        <div className={styles.container}>
+            <div className={styles.formWrapper}>
+                <div className={styles.container1}>
+                    <p>First container</p>
+                </div>
+                <div className={styles.container2}>
+                    <h2>{isRegistered ? 'Register Account' : 'Login Account'}</h2>
+                    <div className={styles.inputButtonContainer}>
+                        <Input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <br />
+                        <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <br />
+                        <Button onClick={handleSubmit} text={isRegistered ? 'Registrera' : 'Logga in'} />
+                        <p style={{ color: 'red' }}>{error}</p>
+                    </div>
+                    <p>
+                        {isRegistered ? 'Har du redan ett konto?' : 'Inget konto?'}{' '}
+                        <Button text={isRegistered ? "Logga in här" : "Registrera dig"} onClick={() => setIsRegistered(!isRegistered)} />
+                    </p>
+                    <div className={styles.imageDiv}>
+                        <img src={peopleLogo} alt="image of people"/>
+                        <p>More than 1.600 users signed up the past 24 Hours</p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

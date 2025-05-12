@@ -1,0 +1,11 @@
+@import "../../styles/mixins";
+
+.input {
+    @include input;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    min-width: fit-content;
+}

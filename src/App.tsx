@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import './App.css'
 import Form from './components/Form/Form'
 import Dashboard from './components/Dashboard/Dashboard';
+import "./styles/global.scss"
 
 function App() {
 

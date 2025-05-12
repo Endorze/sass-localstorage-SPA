@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import Button from "../Button/Button";
 
 type Props = {
   onLogout: () => void;
@@ -11,12 +12,11 @@ const Dashboard:FC<Props> = ({ onLogout }) => {
   return (
     <div>
       <h2>Välkommen, {username}!</h2>
-      <button onClick={() => {
-        localStorage.setItem('isLoggedIn', 'false');
+      <Button onClick={() => {
+        localStorage.setItem("isLoggedIn", "false");
         onLogout();
-      }}>
-        Logga ut
-      </button>
+      }} text="Log Out"/>
+      
     </div>
   );
 };
