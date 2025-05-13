@@ -1,0 +1,24 @@
+@import "../../styles/mixins";
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.dashboardHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dashboardHeader button {
+    max-width: 150px;
+}
+
+
+@media screen and (max-width:390px) {
+    .dashboardHeader h2 {
+        font-size: 20px;
+    }
+}

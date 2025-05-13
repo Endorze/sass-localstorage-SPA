@@ -14,5 +14,6 @@
     color: $primary-font-color;
     cursor: pointer;
     @include transition-03s-button;
+    min-width: 100px;
 }
 
