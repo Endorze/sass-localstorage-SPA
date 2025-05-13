@@ -3,25 +3,21 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 6rem 2rem;
+    margin-top: 120px;
+    padding: 2rem;
 }
 
 @mixin horizontal-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     width: 100%;
     gap: 2rem;
 }
 
-@mixin flex-40-percent {
-    flex: 0.4;
-    background: red;
-}
-
-@mixin flex-60-percent {
-    justify-content: center;
-    flex: 0.6;
+@mixin vertical-content {
+    display: flex;
+    flex-direction: column;
 }
 
 @mixin input {
@@ -34,4 +30,29 @@
 
 @mixin gap-16 {
     gap: 16px;
+}
+
+@mixin transition-03s-text {
+    transition: color 0.3s ease-in;
+}
+
+@mixin transition-03s-button {
+    transition: background 0.3s ease-in;
+}
+
+@mixin gradient-text {
+    background: linear-gradient(90deg, rgba(255, 165, 0, 1) 0%, rgba(238, 130, 238, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin gradient-button {
+  background: linear-gradient(125deg, #EE82EE 0%, #FFA500 100%);
+  background-size: 200% auto;
+  background-position: left center;
+  transition: background-position 0.3s ease-in;
+
+  &:hover {
+    background-position: right center;
+  }
 }

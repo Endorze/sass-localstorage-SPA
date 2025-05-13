@@ -42,7 +42,9 @@ const Form: FC<Props> = ({ onLogin }) => {
         <div className={styles.container}>
             <div className={styles.formWrapper}>
                 <div className={styles.container1}>
-                    <p>First container</p>
+                    <h1 className="gradientText">Get started Today</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit?</p>
+                    <h3>It's easier than it seems</h3>
                 </div>
                 <div className={styles.container2}>
                     <h2>{isRegistered ? 'Register Account' : 'Login Account'}</h2>
@@ -51,13 +53,13 @@ const Form: FC<Props> = ({ onLogin }) => {
                         <br />
                         <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <br />
-                        <Button onClick={handleSubmit} text={isRegistered ? 'Registrera' : 'Logga in'} />
+                        <Button onClick={handleSubmit} text={isRegistered ? 'Register' : 'Login'} />
                         <p style={{ color: 'red' }}>{error}</p>
                     </div>
-                    <p>
-                        {isRegistered ? 'Har du redan ett konto?' : 'Inget konto?'}{' '}
-                        <Button text={isRegistered ? "Logga in här" : "Registrera dig"} onClick={() => setIsRegistered(!isRegistered)} />
-                    </p>
+                    <div className={styles.registerDiv}>
+                        <button onClick={() => setIsRegistered(!isRegistered)}>{isRegistered ? "Login" : "Register Account"}</button>
+                        <p>Forgot Password?</p>
+                    </div>
                     <div className={styles.imageDiv}>
                         <img src={peopleLogo} alt="image of people"/>
                         <p>More than 1.600 users signed up the past 24 Hours</p>

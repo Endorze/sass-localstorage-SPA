@@ -1,7 +1,8 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins";
 
 .button {
-    background: $button-background-color;
+    @include gradient-button;
     outline: 0;
     border: none;
     padding: 0.5rem;
@@ -12,4 +13,6 @@
     border-radius: 5px;
     color: $primary-font-color;
     cursor: pointer;
+    @include transition-03s-button;
 }
+
